@@ -1,0 +1,18 @@
+body {
+    background-color: aqua;
+}
+
+div {
+    background-color: cadetblue;
+    border: 5px blueviolet groove;
+
+    margin: 10px;
+    margin-left: 40%;
+    margin-right: 30%;
+    padding: 15px;
+}
+
+p {
+    background-color: burlywood;
+    padding: 5px;
+}

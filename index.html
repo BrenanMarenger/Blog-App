@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="client.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="listResources"> Print Posts</button>
+        <p v-for="post in posts">
+            <strong>
+                {{ post.title }}
+            </strong>
+            <br>
+            {{ post.body }}
+            <br>
+            <button @click="updateResource(post.id)">Update Post</button>
+            <button @click="patchResource(post.id)">Patch Post</button>
+            <button @click="deletePost(post.id)">❌</button>
+        </p>
+        <br>
+        <br>
+        <button @click="createResource" v-bind:disabled="waitingOnPost">Create Post</button>
+        <br>
+        <input type="text" placeholder="Title" v-model="title" v-bind:disabled="waitingOnPost">
+        <br>
+        <textarea cols="50" rows="10" placeholder="Your Message here..." v-model="body"
+            v-bind:disabled="waitingOnPost"></textarea>
+        <br>
+
+    </div>
+
+</body>
+
+</html>
